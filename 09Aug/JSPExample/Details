@@ -1,0 +1,49 @@
+JSP- Java Server Pages
+It is tag based language
+<tag></tag>
+JSP Page --- html tags + java code
+In jsp we are merging designing and development
+How to create jsp page
+webapp or webcontent
+
+JSP API consist 2 packages
+javax.servlet.jsp
+javax.servlet.jsp.tagext
+
+javax.servlet.jsp-- 2 interfaces
+JspPage
+HttpJspPage
+classes--
+JspWriter -out
+PageContext
+JspFactory
+JspException
+JspError
+
+
+Take a value from user and print its table
+5
+
+5
+10
+15
+20
+25
+
+
+Implicit Object-- created by we container
+out- JSPWriter
+request- HttpServletRequest
+response-HttpServletResponse
+config-ServletConfig
+application- ServletContext
+session- HttpSession
+pageContext- PageContext
+page(this)Object
+exception- Throwable
+
+
+
+
+
+
