@@ -1,0 +1,11 @@
+9 Object
+
+1)out
+2)response
+3)request
+4)session
+5)exception
+6) application
+7) pagecontext --> scopes-page,request,session, application
+8) page -this
+9)config 
