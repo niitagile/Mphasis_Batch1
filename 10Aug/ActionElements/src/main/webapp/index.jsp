@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1> Front page of Website</h1>
-	<jsp:forward page="printHello.jsp">
+	<jsp:include page="printHello.jsp">
 	<jsp:param name="course" value="Java"/>
-	</jsp:forward>
+	</jsp:include>
 </body>
 </html>

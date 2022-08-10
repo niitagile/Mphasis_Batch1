@@ -8,7 +8,11 @@
 </head>
 <body>
 <jsp:useBean id="obj" class="studentbeans.Student" scope="session" />
- <jsp:getProperty property="sname" name="obj"/>
- <jsp:getProperty property="address" name="obj"/>
+<table border=2>
+<tr>
+ <td><jsp:getProperty property="sname" name="obj"/></td>
+ <td><jsp:getProperty property="address" name="obj"/></tr>
+<tr>
+</table>
 </body>
 </html>

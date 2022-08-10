@@ -11,6 +11,6 @@
  <jsp:setProperty property="*" name="obj"/>
  
  
- <a href="view.jsp">View Student Details</a>
+ <a href="view1.jsp">View Student Details</a>
 </body>
 </html>
