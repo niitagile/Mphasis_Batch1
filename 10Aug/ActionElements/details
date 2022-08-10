@@ -1,0 +1,10 @@
+Action tags- to control flow between 2 pages and we can use bean also
+jsp action tags
+jsp:forward - is used to forward to request to another resource(jsp,html,) 
+		o pss parameter <jsp:param>
+jsp:include
+jsp:useBean
+jsp:setProperty
+jsp:getProperty
+jsp:plugin
+jsp:param
