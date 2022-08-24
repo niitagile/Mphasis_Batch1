@@ -3,10 +3,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.nio.file.*;
+
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -31,7 +35,7 @@ public class MainController {
 	 //upload the selected file in server
    // @RequestMapping(value = "/upload", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @PostMapping(value = "/upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public String fileUpload(@RequestParam("file") MultipartFile file) {
+    public String fileUpload(@RequestParam("fileinfo") MultipartFile file) {
           String result = "File was uploaded successfully";
             
      try {
@@ -55,35 +59,24 @@ public class MainController {
 }
     
 		
-// download file
+
     
-    @GetMapping(value = "/download")   
-    public ResponseEntity<Object> downloadFile() throws IOException  {
-        // server location of file which user wants to download   
-    	String fileName = "E://temp/abc.txt";
-    	
-    	//Create classloader object-- to load file in memory
-    	ClassLoader classLoader = new MainController().getClass().getClassLoader();
-    	// Get file from physical ststem to memory by using Classloader
-    	File file = new File(classLoader.getResource(fileName).getFile()); 
-    	//Read your file
-    	   	
-    	InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
-     
-    	//Prepare Header to send it to client side
-    	HttpHeaders headers = new HttpHeaders();
-    	//providing information about data type
-        headers.add("Content-Disposition", String.format("attachment; filename=\"%s\"", file.getName()));
-        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-        headers.add("Pragma", "no-cache");
-        headers.add("Expires", "0");
-        
-     
-        //prepare responseentity (header-- file information, body-- conatins data of file)
-        ResponseEntity<Object> responseEntity = ResponseEntity.ok().headers(headers).contentLength(file.length())
-        		.contentType(MediaType.parseMediaType("application/txt")).body(resource);
-        
-     return responseEntity;
+    @GetMapping("/download")
+    public ResponseEntity downloadFileFromLocal() {
+    	//Get file path
+    	Path path = Paths.get("E://temp/flower.jpg");
+    	Resource resource = null;
+    	try {
+    		//put file in resource object
+    		resource = new UrlResource(path.toUri());
+    	} catch (MalformedURLException e) {
+    		e.printStackTrace();
+    	}
+    	//prepare packet-- header and body
+    	return ResponseEntity.ok()
+    			.contentType(MediaType.parseMediaType("application/text"))
+    			.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+    			.body(resource);
     }
 	
 }
