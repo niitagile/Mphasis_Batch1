@@ -1,0 +1,23 @@
+Problem Statement:
+You are a frontend developer and asked to create a News Web Page with features of logIn and sign Up Pages, Support(complaint form) and an Advertisement Form. The News Paper company does publish news a hard copy to every doorstep also. Make sure to design the Support form accordingly.
+Home Page:
+
+Make sure that you will be able to access them from the News Home Page. Create a horizontal navigation bar with news categories and at the right end display Login and Sign Up options. On the header right display Support and Advertisement links. Divide your Page into various blocks for World News, Indian News, Regional News, Business News. At the end of the page provide at least 8 advertisements with videos/Images. And a Copyright footer. Horizontal align every news of that category. On Hovering to every news item, make sure the news title is visible.
+
+News Details:
+When clicked on a specific news item a new Page with details has to open. With the news details. Create an aside bar with latest news and related news article links.
+
+Login Page:
+Create username and password fields.
+Create a button to log in where you are redirected to the home page.
+With the help of the sign up link from the login page or from the sign up link from the home page open sign up page.
+
+Sign Up Page:
+In the Sign Up Page take user data of First Name, Last Name, Email, Username, Password, Re-enter Password. Create a button, when clicked redirect to the login page.
+
+Support:
+This is the form where users can raise complaints for any issues which are related to offline or online. The forms collect data of Name, Phone Number, Email Address, Home Address, Digital Subscribers or not? and complaint description.
+Create Reset and Submit buttons also.
+
+Advertise Your Business:
+This will take details of the advertisee such as company name, Person name, phone number, company address, type of advertisement, area of advertisement on digital platform, Duration of the advertisement with start date and end date, total cost, advertisement description, upload document with reset and submit button.
