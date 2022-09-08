@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d8e0e5;
+    line-height: 1.4;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+/* navbar */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(172, 203, 243);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #ef5a31;
+}
+
+
+/* news card  */
+
+.card {
+    width: 370px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: box-shadow 300ms;
+    overflow: hidden;
+}
+
+.card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card:hover {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+.card .thumb {
+    height: 235px;
+    background-color: black;
+    overflow: hidden;
+    transition: height 300ms;
+}
+
+.card .thumb img {
+    display: block;
+    opacity: 1;
+    transition: opacity 300ms, transform 300ms;
+    transform: scale(1);
+}
+
+.card:hover .thumb {
+    height: 90px;
+}
+
+.card:hover .thumb img {
+    opacity: 0.6;
+    transform: scale(1.2);
+}
+
+.card:hover .body {
+    height: 330px;
+}
+
+.card:hover .body .description {
+    transition-delay: 0.1s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card .date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    padding-top: 10px;
+    background-color: #ef5a31;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 13px;
+    font-weight: bold;
+}
+
+.card .date .day {
+    display: block;
+    font-size: 14px;
+}
+
+.card .date .month {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.card .body {
+    position: relative;
+    padding: 20px;
+    height: 185px;
+    transition: height 300ms;
+}
+
+.card .body .category {
+    position: absolute;
+    height: 25px;
+    left: 0;
+    top: -25px;
+    padding: 0 15px;
+    background-color: #ef5a31;
+    line-height: 25px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.card .body .title {
+    margin: 0;
+    padding: 0 0 10px 0;
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+}
+
+.card .body .subtitle {
+    color: #ef5a31;
+    padding: 0 0 10px 0;
+    font-size: 19px;
+    margin: 0;
+}
+
+.card .body .description {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 65px;
+    margin: 0;
+    padding: 0;
+    color: #666c74;
+    font-size: 14px;
+    line-height: 27px;
+    opacity: 0;
+    transition: opacity 200ms, transform 200ms;
+    transition-delay: 0;
+    transform: translateY(25px);
+}
+
+.card .footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    font-size: 11px;
+    color: #a3a9ab;
+}
+
+.card .footer .icon-comment {
+    margin-left: 2px;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+}
