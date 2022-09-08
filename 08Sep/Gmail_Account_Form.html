@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>Gmail Account Form</title>
+    <link rel="stylesheet" href="Gmail_Account_Form.css">
+</head>
+<body>
+    <section id="block">
+        <video autoplay muted loop >
+            <source src="Background.mp4" type="video/mp4">
+        </video>
+        <div>
+            <form action="" id="lab-form">
+                <h1>Create Gmail Account</h1>
+                
+                <input type="text" title="name" placeholder="Full Name" required>
+                <br>
+                <input type="tel" title="contact_no" pattern="011-[0-9]{8}" placeholder="011-12345678" required>
+                <br>
+                <input type="email" title="email" pattern ="^[a-zA-Z0-9]+@gmail\.com$" placeholder="abc@gmail.com" required>
+                <br>
+                <button form="lab-form">Reset</button>
+                <button form="lab-form">Submit</button>
+        </form>
+        </div>
+    </section>
+</body>
+</html>
