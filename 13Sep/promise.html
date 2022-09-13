@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <script>
+        var promise = new Promise(function(resolve, reject){
+            const x = "hello";
+            const y = "hello"
+            if(x === y) 
+                resolve();
+            else
+                reject();    
+
+        });
+        //promises is having 2 registered function then and catch
+        promise
+            .then(function(){console.log('Success');})
+            .catch(function(){console.log('some Error has occurred');});
+            </script> 
+           </body>
+    </body>
+</html>
+
