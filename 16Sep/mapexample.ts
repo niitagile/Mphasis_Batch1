@@ -1,3 +1,6 @@
+ //npm install @types/node --save-dev
+ //tsc mapexample.ts --lib es6
+//tsc mapexample.ts --downlevelIteration
 let ageMapping = new Map();  
    
 ageMapping.set("Rakesh", 40);  
