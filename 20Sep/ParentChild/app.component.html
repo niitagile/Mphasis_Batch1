@@ -16,5 +16,6 @@ Hello
 <!--{{ 10 | power:2}}
 <app-reactiveformexample></app-reactiveformexample>
 <app-greet></app-greet>-->
-<app-greet [productList]="products"></app-greet>
+<app-greet [productList]="products" (onChanged)="onCountChanged($event)"></app-greet>
+{{clickCount}}
 <router-outlet></router-outlet>

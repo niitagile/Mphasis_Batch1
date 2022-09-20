@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit,Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-greet',
@@ -23,4 +23,15 @@ isDisabled= false;
   greet():void{
       alert("Hello "+this.name);
   };
+
+//Count change on @Output
+public clickCount:number=0;
+@Output() onChanged=new EventEmitter<number>();
+
+countChange(count : number){
+  count++;
+  this.clickCount=count;
+  this.onChanged.emit(this.clickCount);
+}
+
 }

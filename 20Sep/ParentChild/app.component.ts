@@ -11,7 +11,10 @@ export class AppComponent {
   {name:"Sugar", price:40}
 ];
 
-
+public clickCount:number=0;
+onCountChanged(count:number):void{
+  this.clickCount=count;
+}
 
 
 }

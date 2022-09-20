@@ -6,9 +6,11 @@
 <button [disabled]="isDisabled" >button property</button>
 
 
-<li *ngFor ="let product of productList">
+<li *ngFor ="let product of productList"> 
 
 {{product.name}}
 {{product.price}}
 
 </li> 
+
+<button (click)="countChange(clickCount)">Change Count</button>
