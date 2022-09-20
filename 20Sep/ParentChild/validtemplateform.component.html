@@ -1,0 +1,33 @@
+<div class="container">
+<form #contactForm="ngForm" (ngSubmit)="submit(contactForm.value)">
+   
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input required minlength="3" maxlength="10" ngModel name="firstName" type="text" #firstName="ngModel" class="form-control" id="firstName">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors?.required">First Name is required.</div>
+            <div *ngIf="firstName.errors?.minlength">First Name is minimum {{ firstName.errors?.minlength.requiredLength }} character.</div>
+            <div *ngIf="firstName.errors?.maxlength">First Name is maximum 10 character.</div>
+        </div>
+    </div>
+     
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input required ngModel name="lastName" type="text" #lastName="ngModel" class="form-control" id="lastName">
+        <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+            Last Name is required.
+        </div>
+    </div>
+     
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea required ngModel #comment="ngModel" name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+        <div class="alert alert-danger" *ngIf="comment.touched && !firstName.valid">
+            Comment is required.
+        </div>
+    </div>
+      
+    <button class="btn btn-primary" type="submit" [class.disabled]="!contactForm.valid">Submit</button>
+    
+  </form>
+  </div>
