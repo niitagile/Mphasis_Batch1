@@ -1,0 +1,14 @@
+<p>greet works!</p>
+<input type="text" [(ngModel)]="name">
+<button (click)="greet()">Greet Me!</button>
+
+<h1>Welcome {{name}}</h1> <!--interpolation- get value from .ts-->
+<button [disabled]="isDisabled" >button property</button>
+
+
+<li *ngFor ="let product of productList">
+
+{{product.name}}
+{{product.price}}
+
+</li> 
