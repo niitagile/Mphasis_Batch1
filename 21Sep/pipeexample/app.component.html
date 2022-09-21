@@ -1,0 +1,14 @@
+<router-outlet></router-outlet>
+<p> Fahrenheit : <input type="text" [(ngModel)]="Fahrenheit" /> 
+  Celsius : {{Fahrenheit | tempchange:'C'}} </p><br><br>
+  <p> celsius : <input type="text" [(ngModel)]="celcius" /> 
+    Fahrenheit : {{celcius | tempchange:'F'}} </p>
+
+
+    <h3>Date Expression </h3>
+<p>Date Object : {{toDate | date}} </p>       
+<p>Number Date : {{numDate | date}} </p>     
+<p>ISO Date : {{strDate | date}} </p> 
+<p>short Date : {{toDate | date : "dd-MM-yyyy"}}</p>        
+<p>Object : {{obj|json}}</p>
+<p> without object {{obj}}</p>
