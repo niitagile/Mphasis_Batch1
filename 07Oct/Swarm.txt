@@ -1,0 +1,30 @@
+Swarm - cluster
+1) Create 2 machines
+2) install docker in machine
+3) start service of docker on both machines
+sudo systemctl start docker
+4) Add hosts in /etc/hosts
+Ipaddress name
+5) initialize swarm
+
+sudo docker swarm init --advertise-addr <ipaddressof master>
+
+After execution of this command you will get 1 join command with token. copy it and run it on worker
+so that worker will add in swarm cluster
+
+6) Set Secutriy group(set posts)
+SSH Connection request
+iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+Http connection
+iptables -A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -o eth0 -p tcp --sport 80 -m state --state ESTABLISHED -j ACCEPT
+iptables -A INPUT -p icmp -j ACCEPT
+
+7) Create a service
+
+sudo docker service create --name webapp --publish 8080:8080 --replicas 2 docker.io/jocatalin/kubernetes-bootcamp:v1
+8) check service
+sudo docker service ps webapp
+9) run your service
+curl localhost:8080
