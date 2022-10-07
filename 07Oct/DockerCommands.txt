@@ -1,0 +1,55 @@
+
+Open terminal
+1)  Install Docker
+sudo apt-get update
+
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable
+
+2) Do cloning of project
+git clone https://github.com/Anuj1990/Docker.git
+
+3)Open the folder of Project
+cd Docker
+
+4) start Docker service
+systemctl start Docker
+
+5) build docker image
+here phpcode is image name
+docker build -t phpcode . -f Dockerfile
+
+6) To get list of all images 
+docker images
+
+7) run project
+docker run -d --name phpcode -p 80:80 phpcode
+
+8) curl localhost
+
+
+
+
+
+How to push image in dokerhub
+1) create account in docker hub
+2)  Open terminal
+3) docker login 
+give credentials
+4) give tag to image
+
+docker tag phpcode usernameofdocker/phpcode
+
+5) docker push usernameofdocker/phpcode
+
+
+
+
+
+
+6) run image means run complete code
+docker run -d --name phpcode -p 80:80 phpcode
+
