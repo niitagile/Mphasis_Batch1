@@ -1,0 +1,55 @@
+hyperlink = "http://lambdatest.com"
+driver = webdriver.Chrome()
+driver.get(hyperlink)
+ 
+''' Use Navigation Timing  API to calculate the timings that matter the most '''   
+ 
+navigationStart = driver.execute_script("return window.performance.timing.navigationStart")
+responseStart = driver.execute_script("return window.performance.timing.responseStart")
+domComplete = driver.execute_script("return window.performance.timing.domComplete")
+ 
+''' Calculate the performance'''
+backendPerformance_calc = responseStart - navigationStart
+frontendPerformance_calc = domComplete - responseStart
+**************************************************************
+
+'''' Scroll Bar '''''
+
+JavascriptExecutor js = (JavascriptExecutor)driver;
+js.executeScript("scrollBy(0, 2500)");
+
+
+
+
+
+***********************************************************
+
+try {
+    long lastHeight = (long) ((JavascriptExecutor) webDriver).executeScript("return document.body.scrollHeight");
+
+    while (true) {
+        ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
+        Thread.sleep(2000);
+
+        long newHeight = (long) ((JavascriptExecutor) webDriver).executeScript("return document.body.scrollHeight");
+        if (newHeight == lastHeight) {
+            break;
+        }
+        lastHeight = newHeight;
+    }
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+***************************************************************************************************
+https://www.lambdatest.com/blog/how-to-measure-page-load-times-with-selenium/
+http://www.testingdiaries.com/selenium-verify-scrollbar-webdriver/
+https://www.tutorialspoint.com/how-to-check-if-an-image-is-displayed-on-page-using-selenium
+
+https://stackoverflow.com/questions/48850974/selenium-scroll-to-end-of-page-in-dynamically-loading-webpage
+
+https://artoftesting.com/scroll-webpage-up-down-in-selenium-webdriver
+
+
+
+
+
